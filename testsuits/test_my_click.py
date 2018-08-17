@@ -20,7 +20,9 @@ class MyClick(unittest.TestCase):
 
 
     def test_my_click(self):
+        str = u'点击【我的】模块'
         homepage = HomePage(self.driver)
         homepage.my_click()
         homepage.sleep(3)
+        # homepage.get_img(str)
         homepage.get_img()

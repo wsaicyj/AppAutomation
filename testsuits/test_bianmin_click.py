@@ -21,7 +21,10 @@ class BianminClick(unittest.TestCase):
 
 
     def test_bianmin_click(self):
+
+        # func_name = inspect.stack()[0][3]
+        func_name = u'选择便民模块'
         homepage = HomePage(self.driver)
         homepage.bianmin_click()
         homepage.sleep(3)
-        homepage.get_img()
+        homepage.get_img(func_name)

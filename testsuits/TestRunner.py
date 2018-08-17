@@ -16,10 +16,10 @@ from testsuits.test_my_click import MyClick
 #设置报告文件保存路径
 report_path = os.path.dirname(os.path.abspath('.')) + '/testreport/'
 #获取系统当前时间
-now = time.strftime('%Y-%m-%d-%H_%M_%S', time.localtime(time.time()))
+now = time.strftime('%Y%m%d%H%M', time.localtime(time.time()))
 
 #设置报告名称格式
-htmlFile = report_path + now + 'HTMLtemplate.html'
+htmlFile = report_path + now + '_app测试报告.html'
 
 
 suite = unittest.TestSuite()
@@ -28,7 +28,8 @@ suite = unittest.TestSuite()
 # suite.addTest(MyClick('test_my_click'))
 test_dir = os.path.abspath('.')
 # suite = unittest.TestLoader.discover(start_dir=test_dir, pattern="test_*.py", top_level_dir=None)
-suite = unittest.defaultTestLoader.discover(start_dir=test_dir, pattern="test_*.py", top_level_dir=None)
+# suite = unittest.defaultTestLoader.discover(start_dir=test_dir, pattern="test_app_login.py", top_level_dir=None)
+suite = unittest.defaultTestLoader.discover(start_dir=test_dir, pattern="test_app_login.py", top_level_dir=None)
 
 # print(test_dir)
 
